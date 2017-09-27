@@ -1,4 +1,4 @@
-package com.codecool.collections;
+package com.codecool.collections.stack.stack;
 
 public class IntegerStack {
     private int[] intArray;
