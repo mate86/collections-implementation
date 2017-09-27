@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MyLinkedListTest {
     @Test
@@ -63,7 +64,7 @@ class MyLinkedListTest {
         myLinkedList.add(3);
         myLinkedList.add(7);
         myLinkedList.add(28);
-        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
+        assertThrows(NullPointerException.class, () -> {
             myLinkedList.get(myLinkedList.size());
         });
     }

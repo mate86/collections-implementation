@@ -1,6 +1,5 @@
 package com.codecool.collections.stack;
 
-import com.codecool.collections.stack.stack.IntegerStack;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
