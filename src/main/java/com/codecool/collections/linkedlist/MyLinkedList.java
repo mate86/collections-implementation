@@ -31,7 +31,11 @@ public class MyLinkedList {
     }
 
     public void set(int index, int data) {
-
+        Node newHead = head;
+        for (int i = 0; i < index; i++) {
+            newHead = newHead.next;
+        }
+        newHead.data = data;
     }
 
     public void remove(int index) {
