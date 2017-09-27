@@ -22,7 +22,7 @@ public class MyLinkedList {
         size++;
     }
 
-    public int get(int index){
+    public int get(int index) {
         Node newHead = head;
         for (int i = 0; i < index; i++) {
             newHead = newHead.next;
@@ -39,7 +39,19 @@ public class MyLinkedList {
     }
 
     public void remove(int index) {
-
+        if (index == 0) {
+            head = head.next;
+        }
+        Node newHead = head;
+        for (int i = 0; i < index - 1; i++) {
+            newHead = newHead.next;
+        }
+        if (newHead.next.next == null) {
+            newHead.next = null;
+        } else {
+            newHead.next = newHead.next.next;
+        }
+        size--;
     }
 
     public int size() {

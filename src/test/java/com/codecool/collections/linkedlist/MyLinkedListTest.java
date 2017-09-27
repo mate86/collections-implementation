@@ -1,6 +1,5 @@
 package com.codecool.collections.linkedlist;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -127,5 +126,27 @@ class MyLinkedListTest {
         myLinkedList.add(9);
         myLinkedList.remove(myLinkedList.size() - 1);
         assertEquals(7, myLinkedList.get(myLinkedList.size() - 1));
+    }
+
+    @Test
+    void testRemoveElementAtInvalidIndex() {
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(3);
+        myLinkedList.add(7);
+        myLinkedList.add(9);
+        assertThrows(NullPointerException.class, () -> {
+            myLinkedList.remove(myLinkedList.size());
+        });
+    }
+
+    @Test
+    void testDecreaseSizeAfterRemoving() {
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(3);
+        myLinkedList.add(7);
+        myLinkedList.add(9);
+        int originalListSize = myLinkedList.size();
+        myLinkedList.remove(myLinkedList.size() - 1);
+        assertEquals(originalListSize - 1, myLinkedList.size());
     }
 }
